@@ -3,11 +3,14 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 class TextFieldCustom extends StatefulWidget {
   final String label;
   final String hint;
-
   final ValueChanged<String>? onChanged;
 
-  const TextFieldCustom(
-      {super.key, required this.label, required this.hint, this.onChanged});
+  const TextFieldCustom({
+    super.key,
+    required this.label,
+    required this.hint,
+    this.onChanged,
+  });
 
   @override
   TextFieldCustomState createState() => TextFieldCustomState();
@@ -18,7 +21,7 @@ class TextFieldCustomState extends State<TextFieldCustom> {
 
   @override
   void initState() {
-    _controller = TextEditingController(text: widget.hint);
+    _controller = TextEditingController();
     super.initState();
   }
 
@@ -40,23 +43,25 @@ class TextFieldCustomState extends State<TextFieldCustom> {
         Neumorphic(
           margin: const EdgeInsets.only(left: 8, right: 8, top: 2, bottom: 4),
           style: const NeumorphicStyle(
-              depth: -5,
-              intensity: 1,
-              boxShape: NeumorphicBoxShape.stadium(),
-              lightSource: LightSource.topLeft),
+            depth: -5,
+            intensity: 1,
+            boxShape: NeumorphicBoxShape.stadium(),
+            lightSource: LightSource.topLeft,
+          ),
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
           child: TextField(
             onChanged: widget.onChanged,
             controller: _controller,
             decoration: InputDecoration.collapsed(
-                hintText: widget.hint,
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                hintStyle: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  color: Colors.grey[500],
-                )),
+              hintText: widget.hint,
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: Colors.grey[500],
+              ),
+              border: InputBorder.none,
+            ),
           ),
-        )
+        ),
       ],
     );
   }
