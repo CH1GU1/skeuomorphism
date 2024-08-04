@@ -1,9 +1,22 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
+import 'package:skeuomorphism/presentation/blocs/animate_bloc/animate_bloc.dart';
 import 'package:skeuomorphism/presentation/screens/home/home_screen.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => AnimateBloc(),
+      child: const AppView(),
+    );
+  }
+}
+
+class AppView extends StatelessWidget {
+  const AppView({super.key});
 
   @override
   Widget build(BuildContext context) {

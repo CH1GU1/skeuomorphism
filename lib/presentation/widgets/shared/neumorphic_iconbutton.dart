@@ -37,7 +37,7 @@ class NeumorphicIconButton extends StatelessWidget {
         child: Icon(
           icon,
           size: 30,
-          color: NeumorphicTheme.defaultTextColor(context),
+          color: Colors.grey[800],
         ),
       ),
     );
