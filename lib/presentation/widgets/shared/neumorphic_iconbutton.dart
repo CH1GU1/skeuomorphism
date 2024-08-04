@@ -18,19 +18,27 @@ class NeumorphicIconButton extends StatelessWidget {
         boxShape: NeumorphicBoxShape.circle(),
         shape: NeumorphicShape.convex,
         oppositeShadowLightSource: true,
-        depth: -5,
+        depth: -8,
       ),
       child: NeumorphicButton(
         style: const NeumorphicStyle(
           boxShape: NeumorphicBoxShape.circle(),
           shape: NeumorphicShape.convex,
           oppositeShadowLightSource: false,
-          intensity: 0.8,
-          depth: 8,
+          intensity: 1,
+          depth: 5,
+          border: NeumorphicBorder(
+            width: 0.5,
+            color: Color.fromARGB(50, 255, 255, 255),
+          ),
         ),
         onPressed: onPressed,
-        padding: const EdgeInsets.all(25),
-        child: Icon(icon),
+        padding: const EdgeInsets.all(20),
+        child: Icon(
+          icon,
+          size: 30,
+          color: NeumorphicTheme.defaultTextColor(context),
+        ),
       ),
     );
   }

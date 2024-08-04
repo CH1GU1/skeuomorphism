@@ -1,11 +1,11 @@
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 
-class TextFieldCustom extends StatefulWidget {
+class TextFieldWidget extends StatefulWidget {
   final String label;
   final String hint;
   final ValueChanged<String>? onChanged;
 
-  const TextFieldCustom({
+  const TextFieldWidget({
     super.key,
     required this.label,
     required this.hint,
@@ -13,10 +13,10 @@ class TextFieldCustom extends StatefulWidget {
   });
 
   @override
-  TextFieldCustomState createState() => TextFieldCustomState();
+  TextFieldWidgetState createState() => TextFieldWidgetState();
 }
 
-class TextFieldCustomState extends State<TextFieldCustom> {
+class TextFieldWidgetState extends State<TextFieldWidget> {
   late TextEditingController _controller;
 
   @override
@@ -59,6 +59,10 @@ class TextFieldCustomState extends State<TextFieldCustom> {
                 color: Colors.grey[500],
               ),
               border: InputBorder.none,
+            ),
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[900],
             ),
           ),
         ),
